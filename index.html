@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <h1 style="color: red;">Bienvenidos a Platos Típicos del Valle</h1>
+    <p id="dishDescription" style="display: none;"></p>
+
+    <script>
+        const descriptions = {
+            'plato1.jpg': 'Una deliciosa combinación de sabores tradicionales.',
+            'plato2.jpg': 'Un plato típico lleno de historia y cultura.',
+            'plato3.jpg': 'Una experiencia gastronómica única.',
+            'comida.jpg': 'Seleccione un plato para ver su descripción.'
+        };
+
+        function changeImage(imageSrc) {
+            document.getElementById('dishImage').src = imageSrc;
+            const descriptionElement = document.getElementById('dishDescription');
+            descriptionElement.textContent = descriptions[imageSrc];
+            descriptionElement.style.display = 'block';
+        }
+    </script>
+    <tr>
+     
+        <td><button style="color: white; background-color: blue;" onclick="changeImage('plato1.jpg')">Plato 1</button></td>
+        <td><button style="color: white; background-color: blue;" onclick="changeImage('plato2.jpg')">Plato 2</button></td>
+        <td><button style="color: white; background-color: blue;" onclick="changeImage('plato3.jpg')">Plato 3</button></td>
+        <td><button style="color: white; background-color: blue;" onclick="changeImage('comida.jpg')">Inicio</button></td>
+    
+    </tr>
+    <!-- Removed duplicate function -->
+   
+    <img id="dishImage" src="comida.jpg" alt="Plato típico" width="300" height="200">
+    </tr>
+</body>
+</html>
